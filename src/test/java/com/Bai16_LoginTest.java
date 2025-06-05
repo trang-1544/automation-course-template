@@ -22,16 +22,13 @@ public class Bai16_LoginTest {
         // Launch website
         String url = "https://bantheme.xyz/hathanhauto/tai-khoan/";
         driver.get(url);
-
+       // Login
         WebElement emailField = driver.findElement(By.xpath("//input[@id='username']"));
         emailField.sendKeys("trang1234@gmail.com");
-        Thread.sleep(1000); // Wait for 1 second
-
+        Thread.sleep(1000); 
         WebElement passwordField = driver.findElement(By.xpath("//input[@id='password']"));
         passwordField.sendKeys("tr123456789@@");
         Thread.sleep(1000);
-
-        // Click Login Button
         WebElement loginButton = driver.findElement(By.xpath("//button[@name='login']"));
         loginButton.click();
         Thread.sleep(3000);
@@ -41,8 +38,10 @@ public class Bai16_LoginTest {
         String message = successMessage.getText();
         System.out.println(message);
         Assert.assertTrue(message.contains("Xin chào"));
-
-        driver.quit(); // Close browser
+        // Search
+        WebElement searchElement=driver.findElement(By.xpath("(//input[@placeholder='Tìm kiếm...''])[1]"));
+        searchElement.sendKeys("merc");
+        //driver.quit(); // Close browser
     }
     @Test
     public void loginTestFailed() throws Exception {
