@@ -4,17 +4,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import com.utils.BasicTest;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Bai16_RegisterTest {
+public class Bai16_RegisterTest extends BasicTest {
     @Test
     public void registerTest() throws Exception {
-        // Setup WebDriver for Chrome
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
-
-        // Launch website
         String url = "https://bantheme.xyz/hathanhauto/tai-khoan/";
         driver.get(url);
 
