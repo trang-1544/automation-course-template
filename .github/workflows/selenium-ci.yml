@@ -4,7 +4,7 @@ on:
         branches:
             - "**"
 jobs:
-    test-e2e:
+    test-ci:
         runs-on: ubuntu-latest
         steps:
             - name: Check out
