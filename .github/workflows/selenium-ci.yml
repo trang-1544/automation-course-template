@@ -1,34 +1,35 @@
-name: Selenium CI
-
+name: selenium-ci
 on:
-  push:
-    branches:
-      - "**"
-  pull_request:
-    branches:
-      - main
-
+    push:
+        branhches:
+            - "**"
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+    test-e2e:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check out
+              uses: actions/checkout@v3
 
-      - name: Set up Java
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'temurin'
-          java-version: '17'
+            - name: Set up JDK
+              uses: actions/setup-java@v2
+              with:
+                distribution: 'temurin'
+                java-version: '17'
+            - name: Set up maven
+              run: sudo apt-get install -y maven
 
-      - name: Install Maven
-        run: sudo apt-get install -y maven
+            - name: Chrome
+              run: |
+                sudo apt-get update
+                sudo apt-get --only-upgrade install -y google-chrome-stable
+              
+            - name: Run selenium-ci
+              run: |
+                mvn clean test -Dtest=com.Bai16_LoginTest
 
-      - name: Install Chrome
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y google-chrome-stable
-
-      - name: Run Selenium Smoke Tests
-        run: mvn clean test -Dtest=SmokeTestSuite
-        
+            - name: Upload test results
+              uses: actions/upload-artifact@v4
+              with: 
+                name: test-results
+                path: |
+                  target/surefire-reports
