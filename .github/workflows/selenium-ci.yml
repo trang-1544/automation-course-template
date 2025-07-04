@@ -1,7 +1,7 @@
 name: selenium-ci
 on:
     push:
-        branhches:
+        branches:
             - "**"
 jobs:
     test-e2e:
