@@ -12,7 +12,7 @@ import com.pages_hta.HomePage;
 import com.pages_hta.LoginPage;
 import com.utils.Constants;
 
-public class ShopPommTest extends BasicTest{
+public class ShopPomTest extends BasicTest{
     CartPage cartPage ;
     LoginPage loginPage ;
     BasePage basePage ; 
