@@ -29,7 +29,7 @@ public void addToCartTest(){
           .clickPlus()
           .clickAddProduct()
           .verifyAddProduct();
-        System.out.println("hi");
+
 }
     
 }

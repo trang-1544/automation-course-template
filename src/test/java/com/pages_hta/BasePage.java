@@ -94,5 +94,6 @@ public void verifyElementVisible(By locator, String expectedText) {
     Assert.assertTrue(element.isDisplayed(), "Phần tử không hiển thị: " + locator.toString());
 
 }
-
 }
+
+

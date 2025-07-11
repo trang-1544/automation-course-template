@@ -8,6 +8,7 @@ public class Constants {
     public static final String URL_HTA = "https://bantheme.xyz/hathanhauto/";
     public static final String URL_HTA_TK = "https://bantheme.xyz/hathanhauto/tai-khoan/";
     public static final String EMAIL_HTA = "lethitrang1544@gmail.com";
+    public static final String EMAIL_HTA_1 = "lethitrang6265@gmail.com";
     public static final String PASSWORD_HTA = "Tr20206265@";
     //
     public static final String searchText = "mer";

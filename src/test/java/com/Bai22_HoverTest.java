@@ -17,7 +17,7 @@ import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
-public class HoverTest extends BasicTest {
+public class Bai22_HoverTest extends BasicTest {
     
     
     
