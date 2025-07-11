@@ -22,8 +22,8 @@ public class Bai18_TabTest extends BasicTest {
         String url = "https://bantheme.xyz/hathanhauto/tai-khoan/";
         String ulr_1 ="https://bantheme.xyz/hathanhauto";
         //driver.get(url);
-        Bai16_login login = new Bai16_login();
-        login.login_Test();
+        Bai16_LoginTest login = new Bai16_LoginTest();
+        login.loginTestSuccess();
         ((JavascriptExecutor) driver).executeScript("window.open('about:blank','_blank');");
         ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
 
@@ -50,7 +50,7 @@ public class Bai18_TabTest extends BasicTest {
             WebElement loginLink = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("a.pos-login")));
             loginLink.click();
             // verify van dang login 
-            WebElement successMessage = driver.findElement(By.cssSelector("div.woocommerce-MyAccount-content > p"));
+            WebElement successMessage = driver.findElement(By.xpath("//p[contains(., 'Xin chào')]"));
             String message = successMessage.getText();
             System.out.println(message);
             Assert.assertTrue(message.contains("Xin chào"));

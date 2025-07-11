@@ -32,4 +32,8 @@ jobs:
               with: 
                 name: test-results
                 path: |
+<<<<<<< HEAD
                   target/surefire-reports
+=======
+                  target/surefire-reports
+>>>>>>> cc5dfc6 (WIP: Save progress before switching branch)
