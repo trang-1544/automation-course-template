@@ -95,5 +95,3 @@ public void verifyElementVisible(By locator, String expectedText) {
 
 }
 }
-
-
