@@ -27,7 +27,7 @@ jobs:
 
       - name: Run selenium-ci
         run: |
-          mvn clean test 
+          mvn clean test -Dtest="com.Bai22_HoverTest,com.MultipleTest"
 
       - name: Upload test results
         uses: actions/upload-artifact@v4
