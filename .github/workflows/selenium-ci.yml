@@ -1,39 +1,37 @@
 name: selenium-ci
 on:
-    push:
-        branches:
-            - "**"
+  push:
+    branches:
+      - "**"
+
 jobs:
-    test-ci:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Check out
-              uses: actions/checkout@v3
+  test-ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v3
 
-            - name: Set up JDK
-              uses: actions/setup-java@v2
-              with:
-                distribution: 'temurin'
-                java-version: '17'
-            - name: Set up maven
-              run: sudo apt-get install -y maven
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'temurin'
+          java-version: '17'
 
-            - name: Chrome
-              run: |
-                sudo apt-get update
-                sudo apt-get --only-upgrade install -y google-chrome-stable
-              
-            - name: Run selenium-ci
-              run: |
-                mvn clean test -Dtest=com.Bai16_LoginTest
+      - name: Set up maven
+        run: sudo apt-get install -y maven
 
-            - name: Upload test results
-              uses: actions/upload-artifact@v4
-              with: 
-                name: test-results
-                path: |
-<<<<<<< HEAD
-                  target/surefire-reports
-=======
-                  target/surefire-reports
->>>>>>> cc5dfc6 (WIP: Save progress before switching branch)
+      - name: Chrome
+        run: |
+          sudo apt-get update
+          sudo apt-get --only-upgrade install -y google-chrome-stable
+
+      - name: Run selenium-ci
+        run: |
+          mvn clean test -Dtest=com.Bai16_LoginTest
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: |
+            target/surefire-reports
