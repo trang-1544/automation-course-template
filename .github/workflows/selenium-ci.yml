@@ -27,7 +27,7 @@ jobs:
 
       - name: Run selenium-ci
         run: |
-          mvn clean test -Dtest=com.Bai16_LoginTest
+          mvn clean test 
 
       - name: Upload test results
         uses: actions/upload-artifact@v4
